@@ -1,0 +1,54 @@
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+      console.log("🚀 Vibe Dev: Sistema Inicializado. Bem-vindo ao NERDS!");
+  
+      // 1. Simulação do Funil de Recrutamento (Interação de Botões)
+      // Busca todos os botões da página para dar vida a eles
+      const botoes = document.querySelectorAll("button, a");
+      
+      botoes.forEach(botao => {
+        const textoBotao = botao.innerText.toLowerCase();
+        
+        // Se o botão for de "Processo Seletivo" ou "Inscreva-se"
+        if (textoBotao.includes("seletivo") || textoBotao.includes("inscreva-se") || textoBotao.includes("entrar")) {
+          botao.addEventListener("click", (e) => {
+            e.preventDefault(); // Impede que a página recarregue
+            
+            // Efeito visual rápido de clique
+            botao.style.transform = "scale(0.95)";
+            setTimeout(() => botao.style.transform = "scale(1)", 150);
+  
+            // Alerta customizado (Pode virar um modal no futuro)
+            alert("⚡ Sistema NERDS: O portal de inscrições para a Turma 2026.1 está em fase final de homologação. Fique atento às nossas redes para o lançamento oficial!");
+          });
+        }
+      });
+  
+      // 2. Animação Inteligente de Métricas (Scroll ou Load)
+      // Procura por números na página para criar o efeito de "contador"
+      const elementosTexto = document.querySelectorAll("p, span, div, h1, h2, h3, h4, h5, h6");
+      
+      elementosTexto.forEach(elemento => {
+        const texto = elemento.innerText;
+        // Expressão Regular para encontrar padrões como "30+", "12" ou "4" nas métricas
+        if (/^\d+\+?$/.test(texto.trim()) && parseInt(texto) > 0 && parseInt(texto) < 1000) {
+          let valorFinal = parseInt(texto);
+          let valorAtual = 0;
+          let temSinalMais = texto.includes('+');
+          
+          // Duração da animação baseada no tamanho do número
+          let incremento = valorFinal / 40; 
+          
+          let contador = setInterval(() => {
+            valorAtual += incremento;
+            if (valorAtual >= valorFinal) {
+              elemento.innerText = valorFinal + (temSinalMais ? "+" : "");
+              clearInterval(contador);
+            } else {
+              elemento.innerText = Math.ceil(valorAtual) + (temSinalMais ? "+" : "");
+            }
+          }, 30); // Velocidade do update (30ms)
+        }
+      });
+    });
+  </script>
