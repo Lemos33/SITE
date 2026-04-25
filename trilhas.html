@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NERDS - Nossas Trilhas de Estudo</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&amp;family=Space+Grotesk:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#2d3133",
+                        "error-container": "#93000a",
+                        "secondary-fixed-dim": "#e9c400",
+                        "on-primary-fixed": "#001c3a",
+                        "on-tertiary": "#003061",
+                        "primary": "#a5c8ff",
+                        "outline": "#8c919b",
+                        "on-secondary-container": "#725f00",
+                        "primary-container": "#00417b",
+                        "inverse-surface": "#e0e3e5",
+                        "surface-container": "#1d2022",
+                        "surface-bright": "#363a3b",
+                        "on-surface": "#e0e3e5",
+                        "outline-variant": "#424750",
+                        "on-surface-variant": "#c2c6d1",
+                        "tertiary": "#a7c8ff",
+                        "on-primary": "#00315f",
+                        "error": "#ffb4ab",
+                        "primary-fixed-dim": "#a5c8ff",
+                        "on-primary-container": "#83afef",
+                        "secondary": "#fff9ef",
+                        "tertiary-fixed": "#d5e3ff",
+                        "on-tertiary-fixed": "#001b3c",
+                        "on-error-container": "#ffdad6",
+                        "surface-tint": "#a5c8ff",
+                        "on-secondary-fixed": "#221b00",
+                        "on-primary-fixed-variant": "#0e4782",
+                        "on-tertiary-fixed-variant": "#004689",
+                        "surface-container-highest": "#323537",
+                        "surface-container-lowest": "#0b0f10",
+                        "primary-fixed": "#d4e3ff",
+                        "surface-variant": "#323537",
+                        "surface-dim": "#101415",
+                        "secondary-fixed": "#ffe16d",
+                        "surface-container-high": "#272a2c",
+                        "on-tertiary-container": "#78aeff",
+                        "on-secondary": "#3a3000",
+                        "background": "#101415",
+                        "tertiary-container": "#00407d",
+                        "surface": "#101415",
+                        "on-error": "#690005",
+                        "secondary-container": "#ffdb3c",
+                        "surface-container-low": "#191c1e",
+                        "inverse-primary": "#305f9b",
+                        "tertiary-fixed-dim": "#a7c8ff",
+                        "on-background": "#e0e3e5",
+                        "on-secondary-fixed-variant": "#544600"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "1.5rem",
+                        "container-max": "1280px",
+                        "unit-xs": "0.25rem",
+                        "unit-xl": "4rem",
+                        "unit-md": "1rem",
+                        "margin-page": "2rem",
+                        "unit-sm": "0.5rem",
+                        "unit-lg": "2rem"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "display-2xl": ["Inter"],
+                        "code-accent": ["monospace"],
+                        "label-mono": ["Space Grotesk"],
+                        "headline-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400" }],
+                        "display-2xl": ["72px", { "lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "code-accent": ["14px", { "lineHeight": "1.4", "fontWeight": "400" }],
+                        "label-mono": ["12px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .bg-grid-pattern {
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        .glow-hover:hover {
+            box-shadow: 0 0 20px rgba(233, 196, 0, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md bg-grid-pattern min-h-screen flex flex-col relative overflow-x-hidden pt-20">
+<nav class="fixed top-0 w-full z-50 border-b border-white/10 bg-slate-950/80 backdrop-blur-xl shadow-[0_8px_32px_0_rgba(0,0,0,0.36)]">
+<div class="max-w-7xl mx-auto flex justify-between items-center px-8 h-20">
+<div class="text-2xl font-code-accent font-black tracking-tighter text-amber-400">NERDS</div>
+<div class="hidden md:flex gap-6 font-sans tracking-tight antialiased items-center">
+<a class="text-amber-400 border-b-2 border-amber-400 font-bold pb-1 transition-all duration-300" href="#">Sobre</a>
+<a class="text-slate-300 font-medium hover:text-amber-400 hover:bg-white/5 transition-all duration-300 px-2 py-1 rounded" href="#">Trilhas</a>
+<a class="text-slate-300 font-medium hover:text-amber-400 hover:bg-white/5 transition-all duration-300 px-2 py-1 rounded" href="#">Projetos</a>
+</div>
+<button class="bg-secondary-fixed-dim text-on-secondary-fixed font-label-mono text-label-mono px-4 py-2 rounded font-bold hover:bg-secondary-fixed transition-colors active:scale-95 duration-200 glow-hover">
+                Entrar
+            </button>
+</div>
+</nav>
+<header class="relative pt-unit-xl pb-unit-xl px-gutter max-w-container-max mx-auto w-full z-10 flex flex-col lg:flex-row items-center gap-unit-xl mt-12">
+<div class="flex-1 text-center lg:text-left">
+<h1 class="font-display-2xl text-display-2xl text-on-surface mb-6">Codifique o seu futuro na UFC.<br/><span class="text-secondary-fixed-dim">Faça parte do NERDS.</span></h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto lg:mx-0 mb-8">
+                Junte-se ao principal grupo de pesquisa e desenvolvimento de software da UFC. Construa projetos reais, aprenda com os melhores e acelere sua carreira.
+            </p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+<button class="bg-secondary-fixed-dim text-on-secondary-fixed font-label-mono text-label-mono px-8 py-4 rounded-lg font-bold hover:bg-secondary-fixed transition-all shadow-[0_0_15px_rgba(233,196,0,0.3)] glow-hover">
+                    Ver Processo Seletivo
+                </button>
+<button class="glass-panel text-on-surface font-label-mono text-label-mono px-8 py-4 rounded-lg font-bold hover:bg-white/10 transition-colors">
+                    Conheça Nossos Projetos
+                </button>
+</div>
+</div>
+</header>
+<main class="flex-grow max-w-container-max mx-auto w-full px-gutter pb-unit-xl z-10">
+<section>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-8 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-fixed-dim brand-gold" style="font-variation-settings: 'FILL' 1;">route</span>
+                Nossas Trilhas de Estudo
+            </h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<article class="glass-panel glass-card p-6 rounded-xl flex flex-col gap-4 border-t border-t-white/20 bg-gradient-to-b from-white/5 to-transparent relative overflow-hidden group hover:border-secondary-fixed-dim/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(233,196,0,0.25)]">
+<span class="bg-primary-container/30 text-primary-fixed-dim font-code-accent text-code-accent px-2 py-1 rounded inline-block w-max border border-primary-fixed-dim/20">#ENG_SOFT</span>
+<h3 class="font-bold text-xl text-on-surface">Engenharia de Software</h3>
+<p class="text-on-surface-variant text-gray-400 text-sm">Arquitetura de sistemas, qualidade de software, testes automatizados, padroes de projeto e desenvolvimento full-stack.</p>
+</article>
+<article class="glass-panel glass-card p-6 rounded-xl flex flex-col gap-4 border-t border-t-white/20 bg-gradient-to-b from-white/5 to-transparent relative overflow-hidden group hover:border-secondary-fixed-dim/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(233,196,0,0.25)]">
+<span class="bg-tertiary-container/30 text-tertiary-fixed-dim font-code-accent text-code-accent px-2 py-1 rounded inline-block w-max border border-tertiary-fixed-dim/20">#IA_ML</span>
+<h3 class="font-bold text-xl text-on-surface">Inteligência Artificial</h3>
+<p class="text-on-surface-variant text-gray-400 text-sm">Machine learning, redes neurais, visao computacional e NLP para construir produtos inteligentes com impacto real.</p>
+</article>
+<article class="glass-panel glass-card p-6 rounded-xl flex flex-col gap-4 border-t border-t-white/20 bg-gradient-to-b from-white/5 to-transparent relative overflow-hidden group hover:border-secondary-fixed-dim/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(233,196,0,0.25)]">
+<span class="bg-error-container/30 text-error font-code-accent text-code-accent px-2 py-1 rounded inline-block w-max border border-error/20">#DATA_SCI</span>
+<h3 class="font-bold text-xl text-on-surface">Ciência de Dados</h3>
+<p class="text-on-surface-variant text-gray-400 text-sm">Analise exploratoria, estatistica aplicada, engenharia de dados e visualizacao para orientar decisoes estrategicas.</p>
+</article>
+</div>
+</section>
+</main>
+<footer class="w-full border-t border-white/5 bg-slate-950/90 mt-auto z-10 relative">
+<div class="max-w-7xl mx-auto py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="text-xl font-code-accent font-bold text-slate-100">NERDS</div>
+<div class="flex flex-wrap justify-center gap-4 text-sm font-body-md text-body-md">
+<a class="text-slate-500 hover:text-slate-100 transition-colors cursor-pointer" href="#">Trilhas</a>
+<a class="text-slate-500 hover:text-slate-100 transition-colors cursor-pointer" href="#">Projetos</a>
+<a class="text-slate-500 hover:text-slate-100 transition-colors cursor-pointer" href="#">Sobre</a>
+<a class="text-slate-500 hover:text-slate-100 transition-colors cursor-pointer" href="#">Privacidade</a>
+<a class="text-slate-500 hover:text-slate-100 transition-colors cursor-pointer" href="#">UFC</a>
+</div>
+<div class="text-slate-500 text-sm font-body-md text-body-md text-center md:text-right">
+                © 2024 NERDS - UFC Research Group. All rights reserved.
+            </div>
+</div>
+</footer>
+</body>
+</html>
